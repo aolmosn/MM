@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Curriculum extends Model {
+class Habilidades extends Model {
 
 
 	/**
@@ -10,14 +10,14 @@ class Curriculum extends Model {
 	 *
 	 * @var string
 	 */
-	protected $table = 'MM_CURRICULUM';
+	protected $table = 'MM_HABILIDADES';
 
 	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['MM_COMUNA_ID'];
+	protected $fillable = ['MM_EXPERIENCIA_DESDE', 'MM_EXPERIENCIA_HASTA', 'MM_EXPERIENCIA_INSTITUCION', 'MM_EXPERIENCIA_DETALLES','MM_CURRICULUM_ID'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -26,19 +26,9 @@ class Curriculum extends Model {
 	 */
 	protected $hidden = ['created_at', 'updated_at'];
 
-	public function Comunas()
+	public function Curriculums()
 	{
-		return $this->hasOne('App\Comuna');
+		return $this->belongsTo('App\Curriculum');
 	}
-
-  public function Experiencias()
-  {
-    return $this->hasMany('App\Experiencia');
-  }
-
-  public function Habilidades()
-  {
-    return $this->hasMany('App\Habilidades')
-  }
 
 }
