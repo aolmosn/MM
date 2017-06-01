@@ -18,7 +18,8 @@ class Proyecto extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = [''];
+	protected $primaryKey = 'MM_PROYECTO_ID';
+	protected $fillable = ['MM_PROYECTO_NOMBRE', 'MM_PROYECTO_DESCRIPCION'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -27,14 +28,14 @@ class Proyecto extends Model {
 	 */
 	protected $hidden = ['created_at', 'updated_at'];
 
-	public function region()
+	public function participante()
 	{
-		return $this->hasMany('App\Region');
+		return $this->hasMany('App\Participante');
 	}
 
-	public function comunas()
+	public function canvas()
 	{
-		return $this->hasManyThrough('App\Comuna','App\Region');
+		return $this->hasOne('App\Canvas');
 		//return $this->hasManyThrough('App\Comuna','App\Region','pais_id','region_id','id');
 	}
 

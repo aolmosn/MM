@@ -17,6 +17,7 @@ class Dato extends Model {
 	 *
 	 * @var array
 	 */
+	protected $primaryKey = 'MM_DATOS_ID';
 	protected $fillable = ['MM_DATOS_NOMBRE', 'MM_DATOS_APELLIDO_PATERNO', 'MM_DATOS_APELLIDO_MATERNO', 'MM_DATOS_FECHA_NACIMIENTO', 'MM_DATOS_NACIONALIDAD', 'MM_DATOS_DIRECCION','MM_COMUNAS_ID', 'MM_CURRICULUMS_ID' ];
 
 	/**

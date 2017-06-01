@@ -10,14 +10,15 @@ class Comuna extends Model {
 	 *
 	 * @var string
 	 */
-	protected $table = 'comunas';
+	protected $table = 'MM_COMUNAS';
 
 	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['nombre', 'region_id'];
+	protected $primaryKey = 'MM_COMUNA_ID';
+	protected $fillable = ['MM_COMUNA_NOMBRE', 'MM_REGION_ID'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.

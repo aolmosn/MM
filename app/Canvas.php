@@ -18,6 +18,7 @@ class Canvas extends Model {
 	 *
 	 * @var array
 	 */
+	protected $primaryKey = 'MM_CANVAS_ID';
 	protected $fillable = ['MM_CANVAS_PROPUESTA_VALOR', 'MM_CANVAS_SEGMENTO_CLIENTES', 'MM_CANVAS_RELACION_CLIENTES', 'MM_CANVAS_CANAL', 'MM_CANVAS_FLUJO_INGRESOS', 'MM_CANVAS_RECURSOS_CLAVES', 'MM_CANVAS_ACTIVIDADES_CLAVES', 'MM_CANVAS_SOCIOS_CLAVES', 'MM_CANVAS_ESTRUCTURA_COSTOS', 'MM_PROYECTO_ID'];
 
 	/**
@@ -27,15 +28,10 @@ class Canvas extends Model {
 	 */
 	protected $hidden = ['created_at', 'updated_at'];
 
-	public function region()
+	public function proyectos()
 	{
-		return $this->hasMany('App\Region');
+		return $this->belongsTo('App\Proyecto');
 	}
 
-	public function comunas()
-	{
-		return $this->hasManyThrough('App\Comuna','App\Region');
-		//return $this->hasManyThrough('App\Comuna','App\Region','pais_id','region_id','id');
-	}
 
 }

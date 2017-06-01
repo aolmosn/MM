@@ -17,6 +17,7 @@ class Experiencia extends Model {
 	 *
 	 * @var array
 	 */
+	protected $primaryKey = 'MM_EXPERIENCIA_ID';
 	protected $fillable = ['MM_EXPERIENCIA_DESDE', 'MM_EXPERIENCIA_HASTA', 'MM_EXPERIENCIA_INSTITUCION', 'MM_EXPERIENCIA_DETALLES','MM_CURRICULUM_ID'];
 
 	/**

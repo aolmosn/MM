@@ -2,24 +2,22 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Participante extends Model {
-
-
+class Rol extends Model {
 
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'MM_PARTICIPANTES';
+	protected $table = 'MM_ROL';
 
 	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $primaryKey = 'MM_PARTICIPANTES_ID';
-	protected $fillable = ['MM_USUARIO_CORREO', 'MM_PROYECTO_ID', 'MM_ROL_ID'];
+	protected $primaryKey = 'MM_ROL_ID';
+	protected $fillable = ['MM_ROL_DESCRIPCION'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -28,14 +26,12 @@ class Participante extends Model {
 	 */
 	protected $hidden = ['created_at', 'updated_at'];
 
-	public function proyectos()
+	public function participantes()
 	{
-		return $this->hasMany('App\Region');
+		return $this->hasMany('App\Participante');
 	}
 
-	public funnction user()
-	{
-		return $this->hasMany('App\User');
-	}
+	
+
 
 }

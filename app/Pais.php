@@ -11,14 +11,15 @@ class Pais extends Model {
 	 *
 	 * @var string
 	 */
-	protected $table = 'paises';
+	protected $table = 'MM_PAISES';
 
 	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['nombre'];
+	protected $primaryKey = 'MM_PAIS_ID';
+	protected $fillable = ['MM_PAIS_NOMBRE'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.

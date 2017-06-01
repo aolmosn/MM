@@ -17,7 +17,8 @@ class Curriculum extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['MM_USUARIO_ID'];
+	protected $primaryKey = 'MM_CURRICULUM_ID';
+	protected $fillable = [''];
 
 	/**
 	 * The attributes excluded from the model's JSON form.

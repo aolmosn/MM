@@ -9,14 +9,15 @@ class Region extends Model {
 	 *
 	 * @var string
 	 */
-	protected $table = 'regiones';
+	protected $table = 'MM_REGIONES';
 
 	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['nombre', 'pais_id'];
+	protected $primaryKey = 'MM_REGION_ID';
+	protected $fillable = ['MM_REGION_NOMBRE', 'MM_PAIS_ID'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.

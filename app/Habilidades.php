@@ -17,7 +17,8 @@ class Habilidades extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['MM_EXPERIENCIA_DESDE', 'MM_EXPERIENCIA_HASTA', 'MM_EXPERIENCIA_INSTITUCION', 'MM_EXPERIENCIA_DETALLES','MM_CURRICULUM_ID'];
+	protected $primaryKey = 'MM_HABILIDADES_ID';
+	protected $fillable = ['MM_HABILIDADES_DESCRIPCION'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
