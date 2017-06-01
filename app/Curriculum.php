@@ -17,7 +17,7 @@ class Curriculum extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['MM_COMUNA_ID'];
+	protected $fillable = ['MM_USUARIO_ID'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -26,19 +26,23 @@ class Curriculum extends Model {
 	 */
 	protected $hidden = ['created_at', 'updated_at'];
 
-	public function Comunas()
+	public function usuarios()
 	{
-		return $this->hasOne('App\Comuna');
+		return $this->belongsTo('App\User');
 	}
 
-  public function Experiencias()
+  public function experiencias()
   {
     return $this->hasMany('App\Experiencia');
   }
 
-  public function Habilidades()
+  public function habilidades()
   {
-    return $this->hasMany('App\Habilidades')
+    return $this->hasMany('App\Habilidades');
   }
 
+	public function datos()
+	{
+		return $this->hasOne('App\Dato');
+	}
 }

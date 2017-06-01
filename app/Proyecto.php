@@ -2,7 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Comuna extends Model {
+class Proyecto extends Model {
+
 
 
 	/**
@@ -10,14 +11,14 @@ class Comuna extends Model {
 	 *
 	 * @var string
 	 */
-	protected $table = 'comunas';
+	protected $table = 'MM_PROYECTOS';
 
 	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['nombre', 'region_id'];
+	protected $fillable = [''];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -26,14 +27,15 @@ class Comuna extends Model {
 	 */
 	protected $hidden = ['created_at', 'updated_at'];
 
-	public function regiones()
+	public function region()
 	{
-		return $this->belongsTo('App\Region');
+		return $this->hasMany('App\Region');
 	}
 
-	public function datos()
+	public function comunas()
 	{
-		return $this->hasMany('App\Dato');
+		return $this->hasManyThrough('App\Comuna','App\Region');
+		//return $this->hasManyThrough('App\Comuna','App\Region','pais_id','region_id','id');
 	}
 
 }
